@@ -32,8 +32,9 @@
                 </button>
             </section>
             <section class="flex flex-col spoken-output bg-gray-200 w-full max-h-xl p-4 rounded-lg">
-                <p id="output" class="text-gray-700 mb-8">No one is speaking yet...</p>
-                <button id="write-text" class="w-fit self-end text-blue-600  font-bold flex"><img src="images/edit.svg" alt="">Write</button>
+                <textarea id="output" class="text-gray-700 bg-transparent mb-8 focus:outline-0" contenteditable="false" disabled placeholder="No one is speaking yet..."></textarea>
+                <button onclick="writeText()" id="write-text" class="w-fit self-end text-blue-600  font-bold flex"><img src="images/edit.svg" alt="">Write</button>
+                <button onclick="runTextToSpeechText()" id="read-text" class="hidden w-fit self-end text-blue-600  font-bold flex"><img src="images/read-aloud-icon.svg" alt="">Read aloud</button>
             </section>
         </main>
     </body>

@@ -1,8 +1,3 @@
-ScrollReveal().reveal('.headline');
-ScrollReveal().reveal('.tagline', { delay: 500 });
-ScrollReveal().reveal('.punchline', { delay: 10000 });
-
-
 function runSpeechRecognition() {
     // get output div reference
     var output = document.getElementById("output");
@@ -26,10 +21,33 @@ function runSpeechRecognition() {
     recognition.onresult = function(event) {
         var transcript = event.results[0][0].transcript;
         var confidence = event.results[0][0].confidence;
-        output.innerHTML = "<b>Text:</b> " + transcript /* + "<br/> <b>Confidence:</b> " + confidence*100+"%" */;
+        output.innerHTML = transcript /* + "<br/> <b>Confidence:</b> " + confidence*100+"%" */;
         output.classList.remove("hide");
     };
   
      // start recognition
      recognition.start();
+}
+
+/* function runTextToSpeech() {
+    let speech = new SpeechSynthesisUtterance();
+
+    // Set Speech Language
+    speech.lang = "en";
+
+    document.querySelector("#start").addEventListener("click", () => {
+        // Set the text property with the value of the textarea
+        speech.text = document.querySelector("textarea").value;
+    
+        // Start Speaking
+        window.speechSynthesis.speak(speech);
+    });
+} */
+
+function writeText() {
+    var action = document.getElementById("action");
+    var text = document.getElementsByTagName("textarea");
+    action.innerHTML = "<small>Write something...</small>";
+    text.setAttribute("contenteditable", "true");
+    text.setAttribute("disabled", "false");
 }
