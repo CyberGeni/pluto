@@ -29,7 +29,7 @@ function runSpeechRecognition() {
      recognition.start();
 }
 
-/* function runTextToSpeech() {
+function runTextToSpeech() {
     let speech = new SpeechSynthesisUtterance();
 
     // Set Speech Language
@@ -42,12 +42,18 @@ function runSpeechRecognition() {
         // Start Speaking
         window.speechSynthesis.speak(speech);
     });
-} */
+}
 
 function writeText() {
     var action = document.getElementById("action");
-    var text = document.getElementsByTagName("textarea");
+    var text = document.getElementById("output");
+    var writeTextButton = document.getElementById('write-text')
+    var readTextButton = document.getElementById('read-text')
     action.innerHTML = "<small>Write something...</small>";
+
     text.setAttribute("contenteditable", "true");
-    text.setAttribute("disabled", "false");
+    text.removeAttribute('disabled');
+
+    readTextButton.classList.remove('hidden')
+    writeTextButton.classList.add('hidden')
 }
