@@ -35,7 +35,7 @@ function runTextToSpeech() {
     // Set Speech Language
     speech.lang = "en";
 
-    document.querySelector("#start").addEventListener("click", () => {
+    document.querySelector("#read-text").addEventListener("click", () => {
         // Set the text property with the value of the textarea
         speech.text = document.querySelector("textarea").value;
     
