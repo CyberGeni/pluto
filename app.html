@@ -18,20 +18,22 @@
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="main.js" defer></script>
         <title>Pluto - Conversations for everyone</title>
+
     </head>
     <body class="font-['Manrope'] text-gray-600 headline">
         <header class="h-24 px-8 flex items-center">
-            <img class="w-32" src="images/logo.svg" alt="">
+            <img class="w-28" src="images/logo.svg" alt="">
         </header>
-        <main class="flex flex-col items-center justify-center px-8">
-            <h1 class="text-4xl text-center font-bold text-black mt-16">Tap to listen</h1>
+        <main class="flex flex-col items-center justify-center px-8 max-w-xl mx-auto">
+            <h1 id="action" class="text-4xl text-center font-bold text-black mt-16">Tap to listen</h1>
             <section>
-                <button class="px-9 py-9 m-12 rounded bg-blue-600 text-white">
-                    tap
+                <button onclick="runSpeechRecognition()" class="px-7 py-7 m-12 rounded-xl bg-blue-600 text-white">
+                    <img id="listenButton" src="images/voice-circle.svg" alt="">
                 </button>
             </section>
-            <section class="spoken-output bg-gray-200 w-full max-h-xl p-4 rounded-lg">
-                <p class="text-gray-700 mb-4">The people were there today</p>
+            <section class="flex flex-col spoken-output bg-gray-200 w-full max-h-xl p-4 rounded-lg">
+                <p id="output" class="text-gray-700 mb-8">No one is speaking yet...</p>
+                <button id="write-text" class="w-fit self-end text-blue-600  font-bold flex"><img src="images/edit.svg" alt="">Write</button>
             </section>
         </main>
     </body>
