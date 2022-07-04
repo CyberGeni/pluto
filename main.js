@@ -8,8 +8,6 @@ function runSpeechRecognition() {
     var output = document.getElementById("output");
     // get action element reference
     var action = document.getElementById("action");
-    // get image on button
-    var listenButton = document.getElementById("listenButton");
     // new speech recognition object
     var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
     var recognition = new SpeechRecognition();
@@ -17,7 +15,6 @@ function runSpeechRecognition() {
     // This runs when the speech recognition service starts
     recognition.onstart = function() {
         action.innerHTML = "<small>Listening...</small>";
-        listenButton.classList.add('animate-ping')
     };
     
     recognition.onspeechend = function() {
